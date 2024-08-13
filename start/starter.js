@@ -1,8 +1,9 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const { app } = require('../config/socket.js');
 
-module.exports = function (app) {
+module.exports = function () {
     app.use(express.json());
     app.use(cookieParser());
     

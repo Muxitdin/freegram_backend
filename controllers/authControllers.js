@@ -76,6 +76,7 @@ const loginFunction = async (req, res) => {
         const { phoneNumber, password } = req.body;
 
         const auth = await Auth.findOne({ phoneNumber });
+        console.log(auth)
         if (!auth) return res.status(404).json({ type: "phone", message: "Foydalanuvchi topilmadi" });
 
         if (!auth.verified) return res.status(400).json({ message: "Foydalanuvchi verifikatsiyadan o'tmagan" });
